@@ -1,33 +1,31 @@
-"use client";
-
-import React, {useEffect, useRef, useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
-import {ArrowLeft, ArrowRight, Quote, X} from "lucide-react";
-import {cn} from "@/lib/utils";
+import { useEffect, useRef, useState, cloneElement, RefObject, ReactElement } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, Quote, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Mock Next/Image since we are in Vite
 const Image = (props: any) => <img {...props} />;
 
 export interface iTestimonial {
-	name: string;
-	designation: string;
-	description: string;
-	profileImage: string;
+  name: string;
+  designation: string;
+  description: string;
+  profileImage: string;
 }
 
 interface iCarouselProps {
-	items: React.ReactElement<{
-		testimonial: iTestimonial;
-		index: number;
-		layout?: boolean;
-		onCardClose: () => void;
-	}>[];
-	initialScroll?: number;
+  items: ReactElement<{
+    testimonial: iTestimonial;
+    index: number;
+    layout?: boolean;
+    onCardClose: () => void;
+  }>[];
+  initialScroll?: number;
 }
 
 const useOutsideClick = (
-	ref: React.RefObject<HTMLDivElement | null>,
-	onOutsideClick: () => void,
+  ref: RefObject<HTMLDivElement | null>,
+  onOutsideClick: () => void,
 ) => {
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent | TouchEvent) => {
@@ -48,9 +46,9 @@ const useOutsideClick = (
 };
 
 const Carousel = ({items, initialScroll = 0}: iCarouselProps) => {
-	const carouselRef = React.useRef<HTMLDivElement>(null);
-	const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-	const [canScrollRight, setCanScrollRight] = React.useState(true);
+	const carouselRef = useRef<HTMLDivElement>(null);
+	const [canScrollLeft, setCanScrollLeft] = useState(false);
+	const [canScrollRight, setCanScrollRight] = useState(true);
 
 	const checkScrollability = () => {
 		if (carouselRef.current) {
@@ -129,7 +127,7 @@ const Carousel = ({items, initialScroll = 0}: iCarouselProps) => {
 								key={`card-${index}`}
 								className="last:pr-[5%] md:last:pr-[33%] rounded-3xl"
 							>
-								{React.cloneElement(item, {
+								{cloneElement(item, {
 									onCardClose: () => {
 										return handleCardClose(index);
 									},

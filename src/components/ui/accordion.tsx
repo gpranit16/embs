@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
 interface AccordionItemProps {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
   isOpen: boolean;
   onClick: () => void;
 }
@@ -40,7 +40,7 @@ const AccordionItem = ({ title, children, isOpen, onClick }: AccordionItemProps)
 };
 
 interface AccordionProps {
-  items: { title: string; content: React.ReactNode }[];
+  items: { title: string; content: ReactNode }[];
 }
 
 export const Accordion = ({ items }: AccordionProps) => {
