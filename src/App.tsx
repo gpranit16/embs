@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { MapPin, Mail, ArrowRight, Menu, X, ArrowUp } from 'lucide-react';
 import Home from './pages/Home';
 import AboutPage from './pages/About';
+import Events from './pages/Events';
 import { AdvancedMap } from './components/ui/interactive-map';
 import './index.css';
 
@@ -47,6 +48,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
             <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
+            <Link to="/events" className="hover:text-teal-400 transition-colors">Events</Link>
             <button onClick={() => scrollToAnchor('contact', location)} className="hover:text-teal-400 transition-colors">Contact</button>
             <a 
               href="https://bmsit-ieee.github.io/sps/Membership_Drive/front.html" 
@@ -68,6 +70,7 @@ const Navbar = () => {
         <div className="fixed inset-0 z-[90] bg-[#020C18]/95 backdrop-blur-md flex flex-col items-center justify-center gap-8">
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium">Home</Link>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium">About</Link>
+          <Link to="/events" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium">Events</Link>
           <button onClick={() => scrollToAnchor('contact', location, setMobileMenuOpen)} className="text-2xl font-medium">Contact</button>
         </div>
       )}
@@ -212,6 +215,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/events" element={<Events />} />
           </Routes>
         </main>
 
