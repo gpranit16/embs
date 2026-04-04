@@ -4,6 +4,9 @@ import { MapPin, Mail, ArrowRight, Menu, X, ArrowUp } from 'lucide-react';
 import Home from './pages/Home';
 import AboutPage from './pages/About';
 import Events from './pages/Events';
+import Success from './pages/Success';
+import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop';
 import { AdvancedMap } from './components/ui/interactive-map';
 import './index.css';
 
@@ -49,7 +52,7 @@ const Navbar = () => {
             <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
             <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
             <Link to="/events" className="hover:text-teal-400 transition-colors">Events</Link>
-            <button onClick={() => scrollToAnchor('contact', location)} className="hover:text-teal-400 transition-colors">Contact</button>
+            <Link to="/contact" className="hover:text-teal-400 transition-colors">Contact</Link>
             <a 
               href="https://bmsit-ieee.github.io/sps/Membership_Drive/front.html" 
               target="_blank" 
@@ -71,7 +74,7 @@ const Navbar = () => {
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium">Home</Link>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium">About</Link>
           <Link to="/events" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium">Events</Link>
-          <button onClick={() => scrollToAnchor('contact', location, setMobileMenuOpen)} className="text-2xl font-medium">Contact</button>
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium">Contact</Link>
         </div>
       )}
     </>
@@ -135,7 +138,7 @@ const Footer = () => {
           </div>
 
           {/* Social Column */}
-          <div className="space-y-6" id="contact">
+          <div className="space-y-6">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm">Follow Us</h4>
             <div className="flex gap-4">
               <a 
@@ -163,6 +166,11 @@ const Footer = () => {
                 <WhatsAppIcon size={22} />
               </a>
             </div>
+            <div className="pt-4">
+              <Link to="/contact" className="inline-flex items-center gap-2 text-teal-400 hover:text-white transition-colors group text-sm font-semibold uppercase tracking-widest">
+                Have a query? Contact Us <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -188,7 +196,7 @@ const Footer = () => {
             <span className="hidden md:inline">•</span>
             <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
             <span className="hidden md:inline">•</span>
-            <button onClick={() => scrollToAnchor('contact', location)} className="hover:text-white transition-colors">Contact</button>
+            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
           </div>
           
           <button 
@@ -206,6 +214,7 @@ const Footer = () => {
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-background min-h-screen relative font-sans text-text overflow-x-hidden flex flex-col">
         <div className="fixed inset-0 scanline z-0 pointer-events-none opacity-30" />
         
@@ -216,6 +225,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 

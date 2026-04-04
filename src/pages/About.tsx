@@ -20,11 +20,11 @@ const AboutPage = () => {
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <h2 className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-2">About Us</h2>
           <h3 className="text-4xl md:text-6xl font-light text-white display-heading italic mb-8">Engineering the Future of Medicine</h3>
-          <p className="text-lg md:text-xl text-muted/90 mb-6 leading-relaxed">
-            The IEEE Engineering in Medicine and Biology Society (EMBS) is the world's largest international society of biomedical engineers.
+          <p className="text-lg md:text-xl text-muted/90 mb-8 leading-relaxed">
+            IEEE EMBS BMSIT&M is a team of passionate individuals committed to Engineering the Future of Medicine and Life Sciences through real-world projects and technical events that drive innovation.
           </p>
-          <p className="text-lg md:text-xl text-muted/90 leading-relaxed">
-            At EMBS BMSIT we stand at the intersection of engineering and medicine --a place where ideas spark, grow and evolve into technologies that heal and push the frontiers of life sciences.
+          <p className="text-lg md:text-xl text-muted/90 leading-relaxed font-light italic border-l-2 border-teal-500/30 pl-6">
+            We empower innovators to develop creative and sustainable solutions to existing challenges, while also advancing research in life sciences through new discoveries -- transforming healthcare and impacting lives globally.
           </p>
         </div>
 
