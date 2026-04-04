@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { MapPin, Mail, ArrowRight, Menu, X, ArrowUp, Globe, MessageSquare } from 'lucide-react';
+import { MapPin, Mail, ArrowRight, Menu, X, ArrowUp } from 'lucide-react';
 import Home from './pages/Home';
 import AboutPage from './pages/About';
 import { AdvancedMap } from './components/ui/interactive-map';
