@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Sora:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #020C18;
+    --teal: #00D9AC;
+    --blue: #0072CE;
+    --card: rgba(4, 24, 50, 0.65);
+    --border: rgba(0, 217, 172, 0.15);
+    --text: #EEF4FA;
+    --muted: #6B8FA8;
+    
+    --background: 213 85% 5%;
+    --foreground: 213 30% 95%;
+
+    --card: 214 85% 10%;
+    --card-foreground: 213 30% 95%;
+
+    --popover: 213 85% 5%;
+    --popover-foreground: 213 30% 95%;
+
+    --primary: 167 100% 42%;
+    --primary-foreground: 213 85% 5%;
+
+    --secondary: 206 100% 40%;
+    --secondary-foreground: 213 30% 95%;
+
+    --muted: 206 20% 15%;
+    --muted-foreground: 206 20% 60%;
+
+    --accent: 167 100% 42%;
+    --accent-foreground: 213 85% 5%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 167 100% 42%;
+    --input: 214 85% 15%;
+    --ring: 167 100% 42%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+  }
+  
+  .display-heading {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .bg-grid-teal {
+    background-image: 
+      linear-gradient(to right, rgba(0, 217, 172, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 217, 172, 0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  
+  .text-gradient-teal-blue {
+    background: linear-gradient(to right, var(--teal), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-card {
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-nav {
+    background: rgba(2, 12, 24, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .glow-orb-teal {
+    background: var(--teal);
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+  
+  .glow-orb-blue {
+    background: var(--blue);
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+  
+  .scanline {
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0) 50%,
+      rgba(0,0,0,0.1) 50%,
+      rgba(0,0,0,0.1)
+    );
+    background-size: 100% 4px;
+    z-index: 50;
+    pointer-events: none;
+  }
+}

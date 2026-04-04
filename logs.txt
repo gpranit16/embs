@@ -1,0 +1,15 @@
+
+c:\Users\gupta\OneDrive\Desktop\embs\site>rename "c:\Users\gupta\OneDrive\Desktop\embs\site\public\assets\Asha G.png" asha.png 
+
+c:\Users\gupta\OneDrive\Desktop\embs\site>rename "c:\Users\gupta\OneDrive\Desktop\embs\site\public\assets\Adithya S P.jpg" adithya.jpg 
+
+c:\Users\gupta\OneDrive\Desktop\embs\site>rename "c:\Users\gupta\OneDrive\Desktop\embs\site\public\assets\Jishnu K.jpg" jishnu.jpg 
+
+c:\Users\gupta\OneDrive\Desktop\embs\site>rename "c:\Users\gupta\OneDrive\Desktop\embs\site\public\assets\Tanvi.jpg" tanvi.jpg 
+
+c:\Users\gupta\OneDrive\Desktop\embs\site>rename "c:\Users\gupta\OneDrive\Desktop\embs\site\public\assets\Harshini.jpg" harshini.jpg 
+
+c:\Users\gupta\OneDrive\Desktop\embs\site>rename "c:\Users\gupta\OneDrive\Desktop\embs\site\public\assets\Harshil.jpg" harshil.jpg 
+
+c:\Users\gupta\OneDrive\Desktop\embs\site>copy "C:\Users\gupta\.gemini\antigravity\brain\dabeed8b-8d4e-4be8-931b-7a22dc4e4f9f\embs_card_bg_1775081709602.png" "c:\Users\gupta\OneDrive\Desktop\embs\site\public\assets\embs_card_bg.png" 
+        1 file(s) copied.
