@@ -4,6 +4,7 @@ import { MapPin, Mail, ArrowRight, Menu, X, ArrowUp } from 'lucide-react';
 import Home from './pages/Home';
 import AboutPage from './pages/About';
 import Events from './pages/Events';
+import EventDetails from './pages/EventDetails';
 import Success from './pages/Success';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
@@ -54,7 +55,7 @@ const Navbar = () => {
             <Link to="/events" className="hover:text-teal-400 transition-colors">Events</Link>
             <Link to="/contact" className="hover:text-teal-400 transition-colors">Contact</Link>
             <a 
-              href="https://bmsit-ieee.github.io/sps/Membership_Drive/front.html" 
+              href="https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=MEMEMB018&refProd=MEMEMB018" 
               target="_blank" 
               rel="noreferrer"
               className="bg-transparent border border-teal-500 text-teal-400 px-5 py-2 rounded-full hover:bg-teal-500 hover:text-bg transition-all flex items-center gap-2"
@@ -129,13 +130,14 @@ const Footer = () => {
                 <div className="flex flex-col gap-1">
                   <a href="mailto:jayashree.kth@gmail.com" className="text-sm hover:text-teal-400 transition-colors">jayashree.kth@gmail.com</a>
                   <a href="mailto:jishnugowdak@gmail.com" className="text-sm hover:text-teal-400 transition-colors">jishnugowdak@gmail.com</a>
+                  <a href="mailto:ujwaljawalgi2208@gmail.com" className="text-sm hover:text-teal-400 transition-colors">ujwaljawalgi2208@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-center gap-3 text-muted group hover:text-blue-400 transition-colors">
                 <div className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-blue-400 group-hover:bg-blue-400 group-hover:text-bg transition-colors">
                   <MapPin size={14} />
                 </div>
-                <span className="text-sm">BMSIT&M, Yelhanka, Bangalore</span>
+                <span className="text-sm">BMSIT&M, Yelahanka, Bangalore</span>
               </div>
             </div>
           </div>
@@ -228,6 +230,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/events/:id" element={<EventDetails />} />
             <Route path="/success" element={<Success />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

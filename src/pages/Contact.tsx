@@ -7,12 +7,31 @@ import { Link } from 'react-router-dom';
 const Contact = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '', query: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log('Form submitted:', formData);
-    navigate('/success');
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        navigate('/success');
+      } else {
+        alert(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -113,10 +132,11 @@ const Contact = () => {
               <div className="text-center pt-8">
                 <button 
                   type="submit"
-                  className="bg-teal-500 text-bg px-14 py-5 rounded-full font-bold hover:bg-teal-400 transition-all flex items-center justify-center gap-3 mx-auto hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(20,255,215,0.2)] group"
+                  disabled={isSubmitting}
+                  className="bg-teal-500 text-bg px-14 py-5 rounded-full font-bold hover:bg-teal-400 transition-all flex items-center justify-center gap-3 mx-auto hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(20,255,215,0.2)] group disabled:opacity-70 disabled:hover:scale-100"
                 >
-                  Send Message 
-                  <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {isSubmitting ? 'Sending...' : 'Send Message'} 
+                  {!isSubmitting && <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
                 </button>
               </div>
             </form>
@@ -131,9 +151,9 @@ const Contact = () => {
                 <Mail size={24} />
               </div>
               <h4 className="text-lg font-bold text-white mb-2">Email Us</h4>
-              <div className="flex flex-col gap-2">
-                <a href="mailto:jayashree.kth@gmail.com" className="text-[11px] sm:text-xs text-muted hover:text-teal-400 transition-colors uppercase tracking-widest block break-all">jayashree.kth@gmail.com</a>
-                <a href="mailto:jishnugowdak@gmail.com" className="text-[11px] sm:text-xs text-muted hover:text-teal-400 transition-colors uppercase tracking-widest block break-all">jishnugowdak@gmail.com</a>
+              <div className="flex flex-col gap-2 w-full px-2">
+                <a href="mailto:jayashree.kth@gmail.com" className="text-[11px] sm:text-xs text-muted hover:text-teal-400 transition-colors uppercase tracking-widest block break-all truncate">jayashree.kth@gmail.com</a>
+                <a href="mailto:jishnugowdak@gmail.com" className="text-[11px] sm:text-xs text-muted hover:text-teal-400 transition-colors uppercase tracking-widest block break-all truncate">jishnugowdak@gmail.com</a>
               </div>
             </motion.div>
             
