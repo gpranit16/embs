@@ -123,15 +123,28 @@ const Contact = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
+            <motion.div 
+              variants={itemVariants}
+              className="glass-card p-8 rounded-3xl border border-white/5 hover:border-teal-500/30 transition-all group text-center flex flex-col items-center justify-center"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Mail size={24} />
+              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Email Us</h4>
+              <div className="flex flex-col gap-2">
+                <a href="mailto:jayashree.kth@gmail.com" className="text-[11px] sm:text-xs text-muted hover:text-teal-400 transition-colors uppercase tracking-widest block break-all">jayashree.kth@gmail.com</a>
+                <a href="mailto:jishnugowdak@gmail.com" className="text-[11px] sm:text-xs text-muted hover:text-teal-400 transition-colors uppercase tracking-widest block break-all">jishnugowdak@gmail.com</a>
+              </div>
+            </motion.div>
+            
             {[
-              { icon: Mail, title: "Email Us", detail: "jayashree.kth@gmail.com", link: "mailto:jayashree.kth@gmail.com" },
               { icon: User, title: "ExeCom Contact", detail: "Meet the Team", link: "/about" },
               { icon: MessageSquare, title: "Chat with Us", detail: "Join WhatsApp", link: "https://chat.whatsapp.com/DJWE51VDRBdAcd49HokNIr" },
             ].map((card, i) => (
               <motion.div 
                 key={i}
                 variants={itemVariants}
-                className="glass-card p-8 rounded-3xl border border-white/5 hover:border-teal-500/30 transition-all group text-center"
+                className="glass-card p-8 rounded-3xl border border-white/5 hover:border-teal-500/30 transition-all group text-center flex flex-col items-center justify-center"
               >
                 <div className="w-12 h-12 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <card.icon size={24} />

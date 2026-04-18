@@ -126,7 +126,10 @@ const Footer = () => {
                 <div className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-teal-400 group-hover:bg-teal-400 group-hover:text-bg transition-colors">
                   <Mail size={14} />
                 </div>
-                <a href="mailto:jayashree.kth@gmail.com" className="text-sm">jayashree.kth@gmail.com</a>
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:jayashree.kth@gmail.com" className="text-sm hover:text-teal-400 transition-colors">jayashree.kth@gmail.com</a>
+                  <a href="mailto:jishnugowdak@gmail.com" className="text-sm hover:text-teal-400 transition-colors">jishnugowdak@gmail.com</a>
+                </div>
               </div>
               <div className="flex items-center gap-3 text-muted group hover:text-blue-400 transition-colors">
                 <div className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-blue-400 group-hover:bg-blue-400 group-hover:text-bg transition-colors">
