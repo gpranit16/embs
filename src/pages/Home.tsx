@@ -79,19 +79,28 @@ const Home = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300">
-                <Brain className="w-10 h-10 text-teal-400 mb-6" />
-                <h4 className="text-2xl font-bold text-white mb-3">BCI-Controlled Robotic Arm</h4>
-                <p className="text-muted leading-relaxed">
-                  Neural engineering initiative creating hands-free robotic control interfaces for amputees, utilizing advanced brain-computer interfaces.
-                </p>
-              </div>
-              <div className="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300">
-                <Cpu className="w-10 h-10 text-blue-400 mb-6" />
-                <h4 className="text-2xl font-bold text-white mb-3">Linear Polarization Diagnostic</h4>
-                <p className="text-muted leading-relaxed">
-                  Next-generation medical imaging tool focusing on tissue analysis using polarized light, aiming to identify early-stage anomalies non-invasively.
-                </p>
+              <div className="glass-card rounded-3xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col overflow-hidden col-span-1 md:col-span-2 max-w-4xl mx-auto w-full">
+                <div className="w-full overflow-hidden bg-white/5 relative items-center justify-center flex">
+                  <img src="/assets/fibros.jpeg" alt="FIBROS Project" className="w-full h-auto max-h-[500px] object-cover md:object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d121f] via-[#0d121f]/20 to-transparent"></div>
+                  <div className="absolute top-6 left-6 flex items-center gap-3">
+                    <Cpu className="w-8 h-8 text-teal-400" />
+                    <span className="text-white font-semibold tracking-wider text-sm uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-teal-500/30">Biomedical Imaging</span>
+                  </div>
+                </div>
+                <div className="p-8 md:p-10 pt-6 flex-1">
+                  <h4 className="text-3xl font-bold text-white mb-3">FIBROS</h4>
+                  <p className="text-sm md:text-base text-teal-400 mb-6 font-medium">Fibrotic Identification Based Response using Optical Spectroscopic polarimetry</p>
+                  <p className="text-base text-muted leading-relaxed mb-4">
+                    This project focuses on detecting fibrosis in heart tissue using polarized near-infrared light (around 850 nm). Fibrosis occurs when excess collagen builds up in the heart, making the tissue stiff and affecting how the heart pumps blood.
+                  </p>
+                  <p className="text-base text-muted leading-relaxed mb-4">
+                    In this method, polarized light is passed through small tissue samples, and the changes in the light are measured. Healthy tissue and fibrotic tissue affect light differently because fibrotic tissue contains dense collagen fibers. These fibers change the polarization of light more strongly, increasing properties like retardance, while normal tissue causes more random scattering and higher depolarization.
+                  </p>
+                  <p className="text-base text-muted leading-relaxed">
+                    By comparing these changes in polarization, the system can identify whether the tissue is healthy or fibrotic. This provides a fast, simple, and cost-effective way to study heart tissue and could help in early detection of cardiac diseases.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
