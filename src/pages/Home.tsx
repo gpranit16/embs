@@ -83,10 +83,6 @@ const Home = () => {
                 <div className="w-full overflow-hidden bg-white/5 relative items-center justify-center flex">
                   <img src="/assets/fibros.jpeg" alt="FIBROS Project" className="w-full h-auto max-h-[500px] object-cover md:object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d121f] via-[#0d121f]/20 to-transparent"></div>
-                  <div className="absolute top-6 left-6 flex items-center gap-3">
-                    <Cpu className="w-8 h-8 text-teal-400" />
-                    <span className="text-white font-semibold tracking-wider text-sm uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-teal-500/30">Biomedical Imaging</span>
-                  </div>
                 </div>
                 <div className="p-8 md:p-10 pt-6 flex-1">
                   <h4 className="text-3xl font-bold text-white mb-3">FIBROS</h4>
