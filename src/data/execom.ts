@@ -39,7 +39,7 @@ export const execomMembers: iTestimonial[] = [
   },
   {
     name: "Vishruth",
-    designation: "Execom Member",
+    designation: "Treasurer",
     description: "Supporting chapter initiatives and operations.",
     profileImage: "/assets/Vishruth.jpg"
   },
